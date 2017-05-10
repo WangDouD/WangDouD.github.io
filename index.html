@@ -336,20 +336,16 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>空中入网卡（以下简称“空中卡”）是联通近几年推出的一种快速入网的手机SIM卡，可以实现先购卡后选套餐。以下是官网的介绍：<code>空中入网是一种便利的入网方式，空中入网卡顾名思义就是一张由您自由来主宰归属地、号码、套餐的便捷入网手机卡。有了它，你再也不用为找不到营业厅而烦恼了，足不出户，轻松开卡，动动手指，就可享受4G嗖嗖的网速了！</code><br>本篇我分享的就是利用空中卡免流量的教程。</p>
 </blockquote>
-<h2 id="免流量思路"><a href="#免流量思路" class="headerlink" title="免流量思路"></a>免流量思路</h2><p>空中卡插入手机后，会要求打开 <a href="http://k.10010.com" target="_blank" rel="external">http://k.10010.com</a> 激活。说明空中卡在不激活的情况下是可以访问上述网址的。按照这个理论，用openvpn或者ssr来蒙骗运营商，让运营商误以为我们在访问这个网址。</p>
-<h2 id="在openvpn怎么用"><a href="#在openvpn怎么用" class="headerlink" title="在openvpn怎么用"></a>在openvpn怎么用</h2><p>会改配置文件的小伙伴直接从下方拿代码就好了，不会改的另找出路哦～<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 自行修改[proxy server] [proxy port]为你的服务器地址和端口号</div><div class="line">// 端口号为53或8080</div><div class="line">http-proxy [proxy server] [proxy port]</div><div class="line">remote / 80</div><div class="line">http-proxy-option EXT1 &quot;GET http://m.10010.com/kzrw/ HTTP/1.1&quot;</div><div class="line">http-proxy-option EXT1 BIN 127.0.0.1:443</div><div class="line">http-proxy-option EXT1 &quot;CONNECT m.10010.com/kzrw&quot;</div><div class="line">http-proxy-option EXT1 &quot;Host: m.10010.com/kzrw&quot;</div></pre></td></tr></table></figure></p>
-<h2 id="在ssr怎么用"><a href="#在ssr怎么用" class="headerlink" title="在ssr怎么用"></a>在ssr怎么用</h2><h3 id="Android端"><a href="#Android端" class="headerlink" title="Android端"></a>Android端</h3><p><img src="https://ooo.0o0.ooo/2017/05/07/590f327b08480.jpg" alt="android.jpg"><br>服务器、密码、加密方式、协议自行填写<br>协议参数为空，混淆方式为<code>http_simple</code>，混淆参数为<code>m.10010.com/kzrw</code>，然后右上角小飞机连接，bingo！</p>
-<h3 id="iOS端"><a href="#iOS端" class="headerlink" title="iOS端"></a>iOS端</h3><p><img src="https://ooo.0o0.ooo/2017/05/07/590f329b77de4.jpg" alt="1.jpg"><br><img src="https://ooo.0o0.ooo/2017/05/07/590f336408b6a.jpg" alt="3.jpg"><br>这里以shadowrocket俗称小火箭为例。<br>类型选择Shadowsocksr<br>服务器、密码、算法、协议自行填写<br>协议参数为空，混淆方式为<code>http_simple</code>，混淆参数为<code>m.10010.com/kzrw</code>，点击完成，选择刚添加的节点，全局路由选择<code>代理</code>，点击连接按钮，bingo！</p>
-<h2 id="疑问解答"><a href="#疑问解答" class="headerlink" title="疑问解答"></a>疑问解答</h2><h3 id="用空中卡网速怎么样，可以用来玩游戏吗？"><a href="#用空中卡网速怎么样，可以用来玩游戏吗？" class="headerlink" title="用空中卡网速怎么样，可以用来玩游戏吗？"></a>用空中卡网速怎么样，可以用来玩游戏吗？</h3><p>空中卡目前只能用3G网络，网速取决于服务器，目前测试速度最高1M/s，延迟在100-200不等，玩游戏的话不是很推荐。</p>
-<h3 id="用空中卡可以开热点吗？电脑可以连热点吗？"><a href="#用空中卡可以开热点吗？电脑可以连热点吗？" class="headerlink" title="用空中卡可以开热点吗？电脑可以连热点吗？"></a>用空中卡可以开热点吗？电脑可以连热点吗？</h3><p>可以开热点，插入空中卡的手机开启热点后，<strong>连接该热点的手机或电脑需要开启openvpn或者ssr连接</strong>，连接该热点的电脑目前无法登陆QQ和开启迅雷下载，原因是QQ和迅雷使用的网络协议特殊，目前暂无方法。</p>
-<h3 id="空中卡要激活吗？有时间限制吗？"><a href="#空中卡要激活吗？有时间限制吗？" class="headerlink" title="空中卡要激活吗？有时间限制吗？"></a>空中卡要激活吗？有时间限制吗？</h3><p>不需要激活，而且一定不能激活。如果激活后，空中卡就成了普通的联通卡，那空中卡免流量也是空谈了。<br>目前购买的空中卡，卡面上或者宣传页上会写着最晚启用时间，但实测最晚启用时间就是个摆设，我的2016年12月31日就到期了，到现在还可以用。</p>
-<h3 id="空中卡在哪买？"><a href="#空中卡在哪买？" class="headerlink" title="空中卡在哪买？"></a>空中卡在哪买？</h3><p>目前来说比较难买，应该是联通也知道不太好和谐空中卡免流量。从特殊渠道得知，苏宁还可以买，上链接：<a href="http://m.suning.com/product/0000000000/200199476.html" target="_blank" rel="external">苏宁-空中入网流量卡</a>。所以能买的赶紧入手吧！买到即赚到！</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/07/联通空中入网卡免流量实操教程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
