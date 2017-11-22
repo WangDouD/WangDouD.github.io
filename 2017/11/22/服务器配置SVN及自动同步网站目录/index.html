@@ -87,23 +87,17 @@
 
 
 
-<meta name="description" content="安装环境：CentOS 6 + Nginx
-
-1. 服务器端安装SVN1234# yum install subversion# svnserve --version  //检查一下是否安装成功，成功会显示版本信息# mkdir -p /opt/svn/repositories   //创建SVN版本库目录，目录可自定义# svnadmin create /opt/svn/repositorie">
+<meta name="description" content="安装环境：CentOS 6 + Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器配置SVN及自动同步网站目录">
 <meta property="og:url" content="https://wdd.space/2017/11/22/服务器配置SVN及自动同步网站目录/index.html">
 <meta property="og:site_name" content="笔记">
-<meta property="og:description" content="安装环境：CentOS 6 + Nginx
-
-1. 服务器端安装SVN1234# yum install subversion# svnserve --version  //检查一下是否安装成功，成功会显示版本信息# mkdir -p /opt/svn/repositories   //创建SVN版本库目录，目录可自定义# svnadmin create /opt/svn/repositorie">
+<meta property="og:description" content="安装环境：CentOS 6 + Nginx">
 <meta property="og:image" content="https://i.loli.net/2017/11/22/5a150c7e4a1fd.jpg">
-<meta property="og:updated_time" content="2017-11-22T05:38:22.438Z">
+<meta property="og:updated_time" content="2017-11-22T05:40:29.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器配置SVN及自动同步网站目录">
-<meta name="twitter:description" content="安装环境：CentOS 6 + Nginx
-
-1. 服务器端安装SVN1234# yum install subversion# svnserve --version  //检查一下是否安装成功，成功会显示版本信息# mkdir -p /opt/svn/repositories   //创建SVN版本库目录，目录可自定义# svnadmin create /opt/svn/repositorie">
+<meta name="twitter:description" content="安装环境：CentOS 6 + Nginx">
 <meta name="twitter:image" content="https://i.loli.net/2017/11/22/5a150c7e4a1fd.jpg">
 
 
@@ -344,6 +338,7 @@
         <blockquote>
 <p>安装环境：CentOS 6 + Nginx</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="1-服务器端安装SVN"><a href="#1-服务器端安装SVN" class="headerlink" title="1. 服务器端安装SVN"></a>1. 服务器端安装SVN</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># yum install subversion</div><div class="line"># svnserve --version  //检查一下是否安装成功，成功会显示版本信息</div><div class="line"># mkdir -p /opt/svn/repositories   //创建SVN版本库目录，目录可自定义</div><div class="line"># svnadmin create /opt/svn/repositories //创建版本库，目录需在版本库目录下</div></pre></td></tr></table></figure>
 <h2 id="2-SVN版本库文件配置"><a href="#2-SVN版本库文件配置" class="headerlink" title="2. SVN版本库文件配置"></a>2. SVN版本库文件配置</h2><ol>
 <li>进入版本库目录，<code>/opt/svn/repositories/conf</code>，有三个文件需要配置：<br><code>authz 是权限控制文件</code><br><code>passwd 是账号密码文件</code><br><code>svnserve.conf 是SVN服务配置文件</code>  </li>
