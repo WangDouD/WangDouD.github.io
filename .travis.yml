@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 8.9.0
+  - 10.14.1
 cache:
   directories:
     - node_modules
@@ -30,6 +30,6 @@ branches:
 env:
   global:
     # Github Pages
-    - GH_REF: git@github.com:wddclass/wddclass.github.io.git
+    - GH_REF: https://github.com/wddclass/wddclass.github.io.git
     # Coding Pages
-    - CO_REF: git@git.dev.tencent.com:ibaim/WddSpace-CLI.git
+    - CO_REF: https://git.dev.tencent.com/ibaim/WddSpace-CLI.git
