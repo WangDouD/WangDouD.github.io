@@ -134,9 +134,9 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-    GitHub: https://github.com/WangDouD
+    GitHub: https://github.com/wddclass
     微博: https://weibo.com/232234600
-    Coding: https://coding.net/u/ibaim
+    Coding: https://dev.tencent.com/u/ibaim
   #LinkLabel: Link
 
 
@@ -157,7 +157,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: https://i.loli.net/2017/10/30/59f67fb513ec7.jpg
+avatar: https://i.loli.net/2019/01/08/5c3451b20af1a.png
 
 
 # Table Of Contents in the Sidebar
