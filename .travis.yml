@@ -30,6 +30,6 @@ branches:
 env:
   global:
     # Github Pages
-    - GH_REF: https://github.com/wddclass/wddclass.github.io.git
+    - GH_REF: github.com/wddclass/wddclass.github.io.git
     # Coding Pages
-    - CO_REF: https://git.dev.tencent.com/ibaim/WddSpace-CLI.git
+    - CO_REF: git.dev.tencent.com/ibaim/WddSpace-CLI.git
